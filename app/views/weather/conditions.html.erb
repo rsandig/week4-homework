@@ -1,0 +1,35 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Conditions</title>
+</head>
+<body>
+
+    <h1>Today's weather for <%= @city %>:</h1>
+
+    <h3>
+        <span class="label label-success">It is currently: <%= @data["main"]["temp"] %>&deg;F with <%= @data["weather"].at(0)["description"] %>.
+        </span>
+    </h3>
+    <p>
+        <span class="label label-primary">Low:</span>
+        <%= @data["main"]["temp_min"] %>&deg;F
+
+    </p>
+    <p>
+        <span class="label label-primary">High:</span>
+        <%= @data["main"]["temp_max"] %>&deg;F
+    </p>
+    <p>
+        <span class="label label-primary">Cloud cover:</span>
+        <%= @data["clouds"]["all"] %>%
+    </p>
+
+    <p style="margin-top: 50px;">
+        <span class="label label-danger">Did you know?</span>
+        It is currently <%= @data2["main"]["temp"] %>&deg;F with <%= @data2["weather"].at(0)["description"] %> in Sydney, Australia!!!
+    </p>
+
+
+</body>
+</html>
